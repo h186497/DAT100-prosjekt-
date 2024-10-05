@@ -5,44 +5,74 @@ import no.hvl.dat100ptc.oppgave1.GPSPoint;
 
 public class GPSData {
 
-	private GPSPoint[] gpspoints;
+	private GPSPoint[] gpsPointsArray;
 	protected int antall = 0;
 
-	public GPSData(int antall) {
-
-		throw new UnsupportedOperationException(TODO.method());
+	public GPSData(int n) {
 		
-		// TODO		
+		this.gpsPointsArray = new GPSPoint[n];
+		
+		
+		this.antall = 0;
+		
+		
 	}
 
 	public GPSPoint[] getGPSPoints() {
-		return this.gpspoints;
+		
+		return this.gpsPointsArray;
+		
 	}
 	
 	protected boolean insertGPS(GPSPoint gpspoint) {
 
-		boolean inserted = false;
 		
-		throw new UnsupportedOperationException(TODO.method());
+		if(antall < gpsPointsArray.length) {
+			
 		
-		// TODO 
+			gpsPointsArray[antall] = gpspoint;
+			antall++;
+			return true;
+			
+			
+		}
+
+		return false;
+		
+		
 	
 	}
 
 	public boolean insert(String time, String latitude, String longitude, String elevation) {
 
 		GPSPoint gpspoint;
+		
+		gpspoint = GPSDataConverter.convert(time,latitude,longitude,elevation);
+		
+		
+		return insertGPS(gpspoint);
 
-		throw new UnsupportedOperationException(TODO.method());
 
-		// TODO 
+
+		
 		
 	}
 
 	public void print() {
+		
+		System.out.println("====== GPS Data - START ======");
+		
+		for(int i = 0; i < gpsPointsArray.length; i++) {
+			
+	
+			System.out.print("      ");
+			System.out.println(gpsPointsArray[i].toString());
+			
+			
+		}
+		System.out.println("====== GPS Data Slutt ======");
 
-		throw new UnsupportedOperationException(TODO.method());
-
-		// TODO 
+		
 	}
+	
 }
