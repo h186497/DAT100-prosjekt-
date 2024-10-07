@@ -5,12 +5,12 @@ import no.hvl.dat100ptc.oppgave1.GPSPoint;
 
 public class GPSData {
 
-	private GPSPoint[] gpsPointsArray;
+	private GPSPoint[] gpspoints;
 	protected int antall = 0;
 
 	public GPSData(int n) {
 		
-		this.gpsPointsArray = new GPSPoint[n];
+		this.gpspoints = new GPSPoint[n];
 		
 		
 		this.antall = 0;
@@ -20,17 +20,17 @@ public class GPSData {
 
 	public GPSPoint[] getGPSPoints() {
 		
-		return this.gpsPointsArray;
+		return this.gpspoints;
 		
 	}
 	
 	protected boolean insertGPS(GPSPoint gpspoint) {
 
 		
-		if(antall < gpsPointsArray.length) {
+		if(antall < gpspoints.length) {
 			
 		
-			gpsPointsArray[antall] = gpspoint;
+			gpspoints[antall] = gpspoint;
 			antall++;
 			return true;
 			
@@ -62,11 +62,11 @@ public class GPSData {
 		
 		System.out.println("====== GPS Data - START ======");
 		
-		for(int i = 0; i < gpsPointsArray.length; i++) {
+		for(int i = 0; i < gpspoints.length; i++) {
 			
 	
 			System.out.print("      ");
-			System.out.println(gpsPointsArray[i].toString());
+			System.out.println(gpspoints[i].toString());
 			
 			
 		}
