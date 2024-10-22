@@ -25,11 +25,16 @@ public class GPSComputer {
 	
 	public GPSPoint[] getGPSPoints() {
 		return this.gpspoints;
+		
+		
 	}
 	
 	public double totalDistance() {
 
 		double distance = 0;
+		
+		
+		
 
 		throw new UnsupportedOperationException(TODO.method());
 

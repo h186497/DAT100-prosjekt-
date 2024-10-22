@@ -95,20 +95,35 @@ public class GPSUtils {
 		int secs;
 		double speed;
 		
-		throw new UnsupportedOperationException(TODO.method());
+		double meter = distance(gpspoint1, gpspoint2);
 		
-		// TODO
-
+		secs = gpspoint2.getTime() - gpspoint1.getTime();
+		
+		speed = meter / secs;
+		
+		return speed;
+		
+		
 	}
 
 	public static String formatTime(int secs) {
 
 		String timestr;
 		String TIMESEP = ":";
-
-		throw new UnsupportedOperationException(TODO.method());
 		
-		// TODO 
+		int hr = secs / 3600;
+		int min = (secs % 3600) / 60; 
+		int sekunder = secs % 60;
+		
+		timestr = String.format("%02d:%02d:%02d", hr, min, sekunder);
+		
+	    
+		return timestr;
+		
+		//Gir feil på enhetstesten???
+		
+		
+		
 		
 	}
 	
